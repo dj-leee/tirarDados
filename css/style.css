@@ -1,0 +1,42 @@
+@import url(normalize.css);
+@import url(reset.css);
+
+
+body {
+    height: 100dvh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 80px;
+    background-color: #f4f4f4;
+
+}
+
+.zonaDado{
+    width: 200px;
+    height: 200px;
+
+
+    background-image: url('../img/todosDados6caras.avif');
+    /* transition: background-position 0.5s ease-in-out; */
+    /* 
+    Dado 1: -10px -10px
+    Dado 2: -430px -20px
+    Dado 3: -880px -25px
+    Dado 4: -1320px -25px
+    Dado 5: -1730px -25px
+    Dado 6: -2150px -25px
+    */
+}
+
+.btn{
+    padding: 10px 20px;
+    font-size: 28px;
+    cursor: pointer;
+    background-color: #eb0606;
+    color: #fff;
+    border-radius: 10px;
+    padding: 20px 40px;
+    user-select: none;
+}
