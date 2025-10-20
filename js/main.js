@@ -39,7 +39,7 @@ let dado = {
 
 // Conexiones con HTML
 const zonaDado = document.getElementById("zonaDado"); // <div></div>
-const boton = document.getElementById("boton"); // <a></a>
+
 
 
 
