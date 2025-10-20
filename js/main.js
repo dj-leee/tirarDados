@@ -1,22 +1,47 @@
-// Conexiones con los IDs del HTML
-const boton = document.getElementById("boton");
-const zonaDado = document.getElementById("zonaDado");
-// Funcion que se encarga de enseñar el resultado de la tirada del dado en el HTML
 
+// WEBapp: Simulador de Dados (MVP)
+// Versión: 1.0
+// MVP = Producto Mínimo Viable = Tirar dado 6 caras
 
+// Objeto DADO
+let dado = {
+    // Propiedades
+    cantosRedondeados: true,
+    material: ["plástico", "madera", "metal", "resina"],
+    color: "blanco",
+    opacidad: 1,
+    caras: [4, 6, 8, 10, 12, 20, 100],
+    grabado: false,
+    tamano2: {
+        ["pequeño"]: "2cm",
+        ["standard"]: "3cm",
+        ["grande"]: "5cm",
+    },
+    peso: ["ligero", "standard", "pesado"],
+    marca: [
+        "Hasbro",
+        "Chessex",
+        "Koplow",
+        "GameScience",
+        "WizDice",
+        "Q-Workshop",
+        "Die Hard Dice",
+    ],
+    // Métodos
+    tirar: function (caras = 6) {
+        // si las caras no coinciden con las caras definidas en la propiedad caras, devolver un mensaje de error
+        if (!this.caras.includes(caras)) {
+            return "Error: El dado no tiene " + caras + " caras.";
+        }
+        return Math.floor(Math.random() * caras) + 1;
+    },
+};
 
+// Conexiones con HTML
+const zonaDado = document.getElementById("zonaDado"); // <div></div>
+const boton = document.getElementById("boton"); // <a></a>
 
-function tirarDado() {
-    // Función que ella sola, ejecute al llamarla una tirada de dados de 6 caras
-    function dadoDeSeis() {
-    // generar un número aleatorio entre 1 y 6
-    const resultado = Math.floor(Math.random() * 6) + 1;
-    return resultado;
-  }
-
-  const resultado = dadoDeSeis();
-  // Creacion de una constante Mapa, de todos los valores del dado
-  const mapa =  new Map([
+  const posicionesDado =  new Map([
     [1, "-10px -10px"],
     [2, "-430px -20px"],
     [3, "-880px -25px"],
@@ -25,16 +50,12 @@ function tirarDado() {
     [6, "-2150px -25px"]
   ]);
 
-  if (mapa.has(resultado)) {
-    zonaDado.style.backgroundPosition = mapa.get(resultado);
-    
-  }
-}
 
-// ...existing code...
 
+// Botón para tirar el dado
 boton.addEventListener("click", function (event) {
-  // Añadimos el parámetro event
-  event.preventDefault(); // Prevenimos el comportamiento por defecto, que significa que no recargue la página
-  tirarDado();
+    // tirarDado();
+    event.preventDefault();
+    const resultado = dado.tirar();
+    zonaDado.style.backgroundPosition = posicionesDado.get(resultado);
 });

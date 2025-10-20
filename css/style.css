@@ -19,7 +19,7 @@ body {
 
 
     background-image: url('../img/todosDados6caras.avif');
-    /* transition: background-position 0.5s ease-in-out; */
+    transition: background-position 0.3s ease-in-out; 
     /* 
     Dado 1: -10px -10px
     Dado 2: -430px -20px
