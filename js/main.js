@@ -10,7 +10,7 @@ let dado = {
     material: ["plástico", "madera", "metal", "resina"],
     color: "blanco",
     opacidad: 1,
-    caras: [4, 6, 8, 10, 12, 20, 100],
+    caras: [4, 6, 8, 10, 12, 20, 1000],
     grabado: false,
     tamano2: {
         ["pequeño"]: "2cm",
@@ -41,21 +41,15 @@ let dado = {
 const zonaDado = document.getElementById("zonaDado"); // <div></div>
 const boton = document.getElementById("boton"); // <a></a>
 
-  const posicionesDado =  new Map([
-    [1, "-10px -10px"],
-    [2, "-430px -20px"],
-    [3, "-880px -25px"],
-    [4, "-1320px -25px"],
-    [5, "-1730px -25px"],
-    [6, "-2150px -25px"]
-  ]);
+
 
 
 
 // Botón para tirar el dado
-boton.addEventListener("click", function (event) {
+zonaDado.addEventListener("click", function (event) {
     // tirarDado();
     event.preventDefault();
     const resultado = dado.tirar();
-    zonaDado.style.backgroundPosition = posicionesDado.get(resultado);
+    zonaDado.children[0].textContent = resultado;
+    zonaDado.style.transform = "rotate(" + Math.floor(Math.random() * 90) + "deg)";
 });

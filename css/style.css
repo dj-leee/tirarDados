@@ -10,7 +10,7 @@ body {
     flex-direction: column;
     gap: 80px;
     background-color: #f4f4f4;
-
+    background-image: url('../img/maderaMesa.jpg');
 }
 
 .zonaDado{
@@ -18,8 +18,10 @@ body {
     height: 200px;
 
 
-    background-image: url('../img/todosDados6caras.avif');
-    transition: background-position 0.3s ease-in-out; 
+    background-image: url('../img/dadoVector.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* transition: background-position 1s ease-in-out;  */
     /* 
     Dado 1: -10px -10px
     Dado 2: -430px -20px
@@ -28,6 +30,19 @@ body {
     Dado 5: -1730px -25px
     Dado 6: -2150px -25px
     */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 40px;
+    
+
+
+    h1{
+        font-size: 100px;
+        line-height: 200px;
+        user-select: none;
+    }
 }
 
 .btn{
