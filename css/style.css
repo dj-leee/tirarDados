@@ -21,7 +21,7 @@ body {
     background-image: url('../img/dadoVector.svg');
     background-size: cover;
     background-repeat: no-repeat;
-    /* transition: background-position 1s ease-in-out;  */
+    transition: background-position 1s ease-in-out; 
     /* 
     Dado 1: -10px -10px
     Dado 2: -430px -20px
